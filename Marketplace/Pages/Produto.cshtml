@@ -19,9 +19,24 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <h2 class="mb-4">Cadastro de Produto</h2>
+                <h2 class="mb-4">Produto</h2>
 
                 <form>
+                    <div class="form-group">
+                        <label for="acao">Ação</label>
+                        <select class="form-control" id="acao">
+                            <option value="cadastrar">Cadastrar Novo Produto</option>
+                            <option value="atualizar">Atualizar Produto Existente</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="produtoExistente" style="display: none;">
+                        <label for="produtoExistenteId">Selecione o Produto</label>
+                        <select class="form-control" id="produtoExistenteId">
+                            <option value="1">Celular</option>
+                            <option value="2">Tablet</option>
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label for="descricao">Descrição</label>
                         <input type="text" class="form-control" id="descricao" placeholder="Digite a descrição">
@@ -60,6 +75,44 @@
         </div>
     </div>
 
+    <div class="col-md-12 mb-4 mt-2">
+        <h2>Anunciados</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Preço</th>
+                    <th>Imagem</th>
+                    <th>Status</th>
+                    <th>Categoria</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Celular</td>
+                    <td>R$ 2000,00</td>
+                    <td><img src="https://img.freepik.com/psd-gratuitas/hand-holding-smartphone_23-2147632409.jpg?w=740&t=st=1700926965~exp=1700927565~hmac=aaf33fc428f714cc920ec7e5e1653df6727ffa22fabc15a90679eef216ee02e7" alt="Imagem Produto 1" width="50"></td>
+                    <td>Ativo</td>
+                    <td>Eletrônico</td>
+                    <td>
+                        <button class="btn btn-danger" onclick="excluirProduto(1)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tablet</td>
+                    <td>R$ 1200,00</td>
+                    <td><img src="https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Imagem Produto 2" width="50"></td>
+                    <td>Inativo</td>
+                    <td>Casa</td>
+                    <td>
+                        <button class="btn btn-danger" onclick="excluirProduto(2)">Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
     <!-- Modal para cadastrar nova categoria -->
     <div class="modal fade" id="novaCategoriaModal" tabindex="-1" role="dialog" aria-labelledby="novaCategoriaModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -88,6 +141,21 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        function showHideProdutoExistente() {
+            var acaoSelect = document.getElementById('acao');
+            var produtoExistente = document.getElementById('produtoExistente');
+
+            if (acaoSelect.value === 'atualizar') {
+                produtoExistente.style.display = 'block';
+            } else {
+                produtoExistente.style.display = 'none';
+            }
+        }
+
+        // Adicione um listener para chamar a função acima sempre que o valor do select 'acao' mudar
+        document.getElementById('acao').addEventListener('change', showHideProdutoExistente);
+    </script>
 
 </body>
 </html>
