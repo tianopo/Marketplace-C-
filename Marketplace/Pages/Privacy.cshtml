@@ -1,0 +1,98 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Carrinho";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1 class="display-4 text-center">Carrinho</h1>
+
+        <div class="row mt-5">
+            <!-- Resumo do Pedido -->
+            <div class="col-md-6">
+                <h2>Resumo do Pedido</h2>
+
+                <ul class="list-group">
+                    <!-- Exemplo de Item no Carrinho -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Produto 1
+                        <span class="badge badge-primary badge-pill">1</span>
+                    </li>
+
+                    <!-- Adicione mais itens no carrinho conforme necessário -->
+
+                </ul>
+            </div>
+
+            <!-- Detalhes do Pagamento e Endereço -->
+            <div class="col-md-6">
+                <h2>Detalhes do Pagamento e Endereço</h2>
+
+                <!-- Formulário para Detalhes do Pagamento -->
+                <form>
+                    <div class="form-group">
+                        <label for="numeroCartao">Número do Cartão:</label>
+                        <input type="text" class="form-control" id="numeroCartao" placeholder="1234 5678 9012 3456">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="validadeCartao">Validade:</label>
+                            <input type="text" class="form-control" id="validadeCartao" placeholder="MM/AA">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="cvvCartao">CVV:</label>
+                            <input type="text" class="form-control" id="cvvCartao" placeholder="123">
+                        </div>
+                    </div>
+
+                    <!-- Adicione mais campos para detalhes de pagamento conforme necessário -->
+
+                    <hr>
+
+                    <!-- Formulário para Detalhes do Endereço -->
+                    <h4>Endereço de Entrega</h4>
+
+                    <div class="form-group">
+                        <label for="logradouro">Logradouro:</label>
+                        <input type="text" class="form-control" id="logradouro" placeholder="Rua, número">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="cidade">Cidade:</label>
+                            <input type="text" class="form-control" id="cidade">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="estado">Estado:</label>
+                            <input type="text" class="form-control" id="estado">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="cep">CEP:</label>
+                            <input type="text" class="form-control" id="cep">
+                        </div>
+                    </div>
+
+                    <!-- Adicione mais campos para detalhes de endereço conforme necessário -->
+
+                    <button type="submit" class="btn btn-success mt-3">Finalizar Pagamento</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

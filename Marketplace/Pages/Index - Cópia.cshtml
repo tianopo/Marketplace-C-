@@ -1,0 +1,86 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Marketplace";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1 class="display-4 text-center">Bem-vindo ao Marketplace</h1>
+
+        <div class="row mt-5">
+            <!-- Produtos -->
+            <div class="col-md-8">
+                <h2>Produtos</h2>
+
+                <div class="row">
+                    <!-- Exemplo de Produto -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Produto 1</h5>
+                                <p class="card-text">Descrição do Produto 1.</p>
+                                <button class="btn btn-primary">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Produto 2</h5>
+                                <p class="card-text">Descrição do Produto 2.</p>
+                                <button class="btn btn-primary">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Produto 3</h5>
+                                <p class="card-text">Descrição do Produto 3.</p>
+                                <button class="btn btn-primary">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carrinho -->
+            <div class="col-md-4">
+                <h2>Carrinho</h2>
+
+                <ul class="list-group">
+                    <!-- Exemplo de Item no Carrinho -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Produto 1
+                        <span class="badge badge-primary badge-pill">1</span>
+                    </li>
+
+                    <!-- Adicione mais itens no carrinho conforme necessário -->
+
+                </ul>
+
+                <div class="mt-3">
+                    <button class="btn btn-success">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

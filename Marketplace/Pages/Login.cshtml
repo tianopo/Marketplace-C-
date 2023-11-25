@@ -1,0 +1,62 @@
+﻿@page
+@model Marketplace.Pages.LoginModel
+@using Marketplace.Models.Model
+@using Marketplace.Model
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Login</title>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2 class="mb-4">Login</h2>
+
+                <!-- Formulário de Login -->
+                <form>
+                    <div class="form-group">
+                        <label for="inputEmail">E-mail</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Digite seu e-mail">
+                    </div>
+
+                    <div class="form-group" id="codeGroup" style="display: none;">
+                        <label for="inputCode">Código Recebido por E-mail</label>
+                        <input type="text" class="form-control" id="inputCode" placeholder="Digite o código">
+                    </div>
+
+                    <button type="button" class="btn btn-primary" onclick="showCodeInput()">Enviar</button>
+                </form>
+
+                <!-- Link para a página de cadastro -->
+                <p class="mt-3">Ainda não tem uma conta? <a href="/Cadastro">Cadastre-se</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        function showCodeInput() {
+            var codeGroup = document.getElementById('codeGroup');
+            var button = document.querySelector('.btn-primary');
+
+            if (codeGroup.style.display === 'none') {
+                codeGroup.style.display = 'block';
+                button.textContent = 'Entrar';
+            }
+        }
+    </script>
+
+</body>
+</html>
